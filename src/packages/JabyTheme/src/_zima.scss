@@ -132,6 +132,11 @@ select {
   border-radius: $z-radius !important;
 }
 
+// Menu entries marked hidden (grouped apps, only their folder shows)
+.osjs-gui-menu-entry[data-label-action=hidden] {
+  display: none !important;
+}
+
 // Menu separators: not hoverable, no bg change (keep original appearance)
 .osjs-gui-menu-entry:has(.osjs-gui-menu-separator) {
   cursor: default;

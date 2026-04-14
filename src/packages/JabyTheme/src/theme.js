@@ -39,11 +39,21 @@ const LABEL_TAGS = [
   {match: /^run$/i, tag: 'run'}
 ];
 
+let HIDDEN_TITLES = new Set();
+
 const tagMenuEntry = (entry) => {
-  if (entry.dataset.labelAction) return;
   const label = entry.querySelector('span:last-child');
   if (!label) return;
   const text = (label.textContent || '').trim();
+
+  // Hide entries whose title matches a grouped/hidden app
+  if (HIDDEN_TITLES.has(text)) {
+    entry.dataset.labelAction = 'hidden';
+    return;
+  }
+
+  if (entry.dataset.labelAction && entry.dataset.labelAction !== 'hidden') return;
+
   for (const {match, tag} of LABEL_TAGS) {
     if (match.test(text)) {
       entry.dataset.labelAction = tag;
@@ -136,7 +146,21 @@ const muteDefaultLoginLogout = (core) => {
   } catch (e) {}
 };
 
+const refreshHiddenTitles = (core) => {
+  try {
+    const packages = core.make('osjs/packages');
+    const list = packages.metadata || [];
+    HIDDEN_TITLES = new Set(
+      list
+        .filter((m) => m && m.jaby && m.jaby.hidden === true)
+        .map((m) => (m.title && (m.title.en_EN || m.title)) || m.name)
+        .filter(Boolean)
+    );
+  } catch (e) {}
+};
+
 export const register = (core, desktop, options, metadata) => {
+  refreshHiddenTitles(core);
   observeMenus();
   tagAllMenuEntries();
   tagAllWindowHeaders();
