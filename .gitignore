@@ -5,3 +5,6 @@ node_modules
 /sessions
 /.env*
 /session-store.db
+
+# Generated iframe-app packages — regenerated from apps.config.json
+/src/packages/apps/

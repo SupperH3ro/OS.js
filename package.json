@@ -17,6 +17,9 @@
     "make:application": "osjs-cli make:application",
     "make:iframe-application": "osjs-cli make:iframe-application",
     "make:provider": "osjs-cli make:provider",
+    "apps:sync": "node scripts/build-apps.js",
+    "apps:discover": "node scripts/discover-apps.js",
+    "apps:refresh": "node scripts/discover-apps.js && node scripts/build-apps.js && osjs-cli package:discover",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
     "watch": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --watch"
   },

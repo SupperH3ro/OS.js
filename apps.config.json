@@ -1,0 +1,54 @@
+{
+  "$schema": "Seed list for local dev. On the server, scripts/discover-apps.js regenerates this from Docker Traefik labels.",
+  "apps": [
+    {
+      "name": "Sonarr",
+      "title": "Sonarr",
+      "url": "https://sonarr.kisscsabi.com",
+      "icon": "television",
+      "color": "#35c5f0"
+    },
+    {
+      "name": "Radarr",
+      "title": "Radarr",
+      "url": "https://radarr.kisscsabi.com",
+      "icon": "film",
+      "color": "#ffc230"
+    },
+    {
+      "name": "Prowlarr",
+      "title": "Prowlarr",
+      "url": "https://prowlarr.kisscsabi.com",
+      "icon": "magnifying-glass",
+      "color": "#f97316"
+    },
+    {
+      "name": "Seerr",
+      "title": "Seerr",
+      "url": "https://seerr.kisscsabi.com",
+      "icon": "sparkle",
+      "color": "#a855f7"
+    },
+    {
+      "name": "Torrent",
+      "title": "Torrent",
+      "url": "https://torrent.kisscsabi.com",
+      "icon": "download",
+      "color": "#22c55e"
+    },
+    {
+      "name": "Files",
+      "title": "Files",
+      "url": "https://files.kisscsabi.com",
+      "icon": "folder",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Plex",
+      "title": "Plex",
+      "url": "https://plex.kisscsabi.com",
+      "icon": "play-circle",
+      "color": "#e5a00d"
+    }
+  ]
+}

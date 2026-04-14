@@ -1,0 +1,11 @@
+node_modules
+src/packages/JabyTheme/node_modules
+src/packages/apps/
+dist/
+.git
+.gitignore
+.DS_Store
+*.log
+.env*
+sessions/
+session-store.db
