@@ -66,15 +66,15 @@ const CATEGORY_FROM_ICON = {
   default: 'utility'
 };
 
-const guessIcon = (nameLc) => {
-  if (/sonarr|tv/.test(nameLc)) return ['television', '#35c5f0'];
-  if (/radarr|movie|film/.test(nameLc)) return ['film', '#ffc230'];
-  if (/prowlarr|jackett|indexer|search/.test(nameLc)) return ['magnifying-glass', '#f97316'];
-  if (/plex|jellyfin|emby|media/.test(nameLc)) return ['play-circle', '#e5a00d'];
-  if (/seerr|overseerr|ombi|request/.test(nameLc)) return ['sparkle', '#a855f7'];
-  if (/torrent|qbit|transmission|deluge|flood|aria/.test(nameLc)) return ['download', '#22c55e'];
-  if (/file|nextcloud|owncloud|seafile|filebrowser/.test(nameLc)) return ['folder', '#3b82f6'];
-  return ['default', '#3b82f6'];
+const guessFromName = (nameLc) => {
+  if (/sonarr|tv/.test(nameLc)) return {icon: 'television', color: '#35c5f0', category: 'multimedia'};
+  if (/radarr|movie|film/.test(nameLc)) return {icon: 'film', color: '#ffc230', category: 'multimedia'};
+  if (/prowlarr|jackett|indexer/.test(nameLc)) return {icon: 'magnifying-glass', color: '#f97316', category: 'multimedia'};
+  if (/plex|jellyfin|emby|media/.test(nameLc)) return {icon: 'play-circle', color: '#e5a00d', category: 'multimedia'};
+  if (/seerr|overseerr|ombi|request/.test(nameLc)) return {icon: 'sparkle', color: '#a855f7', category: 'multimedia'};
+  if (/torrent|qbit|transmission|deluge|flood|aria|airdc|dc\+\+/.test(nameLc)) return {icon: 'download', color: '#22c55e', category: 'network'};
+  if (/file|nextcloud|owncloud|seafile|filebrowser/.test(nameLc)) return {icon: 'folder', color: '#3b82f6', category: 'utility'};
+  return {icon: 'default', color: '#3b82f6', category: 'utility'};
 };
 
 const fetchContainers = () => new Promise((resolve, reject) => {
@@ -138,19 +138,18 @@ const containerToApp = (c) => {
   const rawName = (c.Names && c.Names[0]) || c.Id.slice(0, 12);
   const pascal = slugToPascal(rawName);
   const nameLc = rawName.replace(/^\//, '').toLowerCase();
-  const [icon, color] = guessIcon(nameLc);
+  const guess = guessFromName(nameLc);
 
   const override = (k) => labels[`jabyos.${k}`];
   const url = override('url') || `${chosen.secure ? 'https' : 'http'}://${chosen.host}`;
 
-  const resolvedIcon = override('icon') || icon;
   return {
     name: override('name') || pascal,
     title: override('title') || titleFromName(rawName),
     url,
-    icon: resolvedIcon,
-    color: override('color') || color,
-    category: override('category') || CATEGORY_FROM_ICON[resolvedIcon] || 'utility',
+    icon: override('icon') || guess.icon,
+    color: override('color') || guess.color,
+    category: override('category') || guess.category,
     width: Number(override('width')) || undefined,
     height: Number(override('height')) || undefined,
     priority: Number(override('priority')) || 0,
