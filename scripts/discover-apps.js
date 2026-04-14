@@ -31,14 +31,40 @@ const SOCKET = process.env.DOCKER_SOCKET || '/var/run/docker.sock';
 
 const CAP = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-const titleFromName = (name) => CAP(name.replace(/^\//, '').replace(/[-_]/g, ' '));
-
-const slugToPascal = (name) => name
+const stripComposeSuffix = (name) => name
   .replace(/^\//, '')
-  .split(/[-_\s.]+/)
-  .filter(Boolean)
+  .replace(/-\d+$/, '');  // strip trailing compose instance suffix (-1)
+
+const dedupTokens = (tokens) => {
+  const out = [];
+  for (const t of tokens) {
+    if (!out.length || out[out.length - 1].toLowerCase() !== t.toLowerCase()) {
+      out.push(t);
+    }
+  }
+  return out;
+};
+
+const tokensOf = (name) => dedupTokens(
+  stripComposeSuffix(name).split(/[-_\s.]+/).filter(Boolean)
+);
+
+const titleFromName = (name) => tokensOf(name).map(CAP).join(' ') || name;
+
+const slugToPascal = (name) => tokensOf(name)
   .map((p) => CAP(p.toLowerCase()))
   .join('') || 'App';
+
+const CATEGORY_FROM_ICON = {
+  television: 'multimedia',
+  film: 'multimedia',
+  'play-circle': 'multimedia',
+  download: 'network',
+  'magnifying-glass': 'utility',
+  sparkle: 'utility',
+  folder: 'utility',
+  default: 'utility'
+};
 
 const guessIcon = (nameLc) => {
   if (/sonarr|tv/.test(nameLc)) return ['television', '#35c5f0'];
@@ -117,12 +143,14 @@ const containerToApp = (c) => {
   const override = (k) => labels[`jabyos.${k}`];
   const url = override('url') || `${chosen.secure ? 'https' : 'http'}://${chosen.host}`;
 
+  const resolvedIcon = override('icon') || icon;
   return {
     name: override('name') || pascal,
     title: override('title') || titleFromName(rawName),
     url,
-    icon: override('icon') || icon,
+    icon: resolvedIcon,
     color: override('color') || color,
+    category: override('category') || CATEGORY_FROM_ICON[resolvedIcon] || 'utility',
     width: Number(override('width')) || undefined,
     height: Number(override('height')) || undefined,
     priority: Number(override('priority')) || 0,

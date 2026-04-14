@@ -34,7 +34,7 @@ const metadata = (app) => ({
   type: 'application',
   name: app.name,
   icon: 'icon.svg',
-  category: 'jabyapps',
+  category: app.category || 'utility',
   singleton: true,
   server: null,
   title: {en_EN: app.title},
