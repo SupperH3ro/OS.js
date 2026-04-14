@@ -97,7 +97,8 @@ const folderMain = (group, cfg) => `(function(){
     })
       .on('destroy', function () { proc.destroy(); })
       .render(function ($content) {
-        var all = (packages.metadata || []).filter(function (m) {
+        var getPackages = (typeof packages.getPackages === 'function') ? packages.getPackages.bind(packages) : function(f){ return (packages.metadata || []).filter(f); };
+        var all = getPackages(function (m) {
           return m && m.jaby && m.jaby.group === GROUP;
         });
         all.sort(function(a,b){

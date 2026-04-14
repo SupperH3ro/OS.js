@@ -149,10 +149,11 @@ const muteDefaultLoginLogout = (core) => {
 const refreshHiddenTitles = (core) => {
   try {
     const packages = core.make('osjs/packages');
-    const list = packages.metadata || [];
+    const list = (typeof packages.getPackages === 'function')
+      ? packages.getPackages((m) => m && m.jaby && m.jaby.hidden === true)
+      : (packages.metadata || []).filter((m) => m && m.jaby && m.jaby.hidden === true);
     HIDDEN_TITLES = new Set(
       list
-        .filter((m) => m && m.jaby && m.jaby.hidden === true)
         .map((m) => (m.title && (m.title.en_EN || m.title)) || m.name)
         .filter(Boolean)
     );
