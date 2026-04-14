@@ -1,0 +1,13 @@
+{
+  "type": "icons",
+  "name": "JabyIcons",
+  "title": {
+    "en_EN": "JabyOS Icons"
+  },
+  "description": {
+    "en_EN": "Default JabyOS icon pack (Phosphor overrides on Gnome fallbacks)"
+  },
+  "files": [
+    "main.css"
+  ]
+}

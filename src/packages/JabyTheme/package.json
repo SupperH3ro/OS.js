@@ -1,0 +1,26 @@
+{
+  "name": "@jabyos/theme",
+  "version": "0.1.0",
+  "description": "JabyOS default theme",
+  "files": [
+    "dist/",
+    "metadata.json"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
+    "watch": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --watch"
+  },
+  "keywords": ["osjs"],
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@osjs/dev-meta": "^2.1.0",
+    "cross-env": "^10.1.0"
+  },
+  "osjs": {
+    "type": "package"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-transform-runtime"]
+  }
+}

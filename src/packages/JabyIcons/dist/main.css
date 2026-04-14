@@ -1,0 +1,441 @@
+/*!
+ * OS.js - JavaScript Cloud/Web Desktop Platform
+ *
+ * Copyright (c) 2011-2020, Anders Evenrud <andersevenrud@gmail.com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @author  Anders Evenrud <andersevenrud@gmail.com>
+ * @licence Simplified BSD License
+ */.osjs-icon[data-icon=address-book-new]{background-image:url(icons/address-book-new.png)}.osjs-icon[data-icon=application-exit]{background-image:url(icons/application-exit.png)}.osjs-icon[data-icon=appointment-new]{background-image:url(icons/appointment-new.png)}.osjs-icon[data-icon=bookmark-new]{background-image:url(icons/bookmark-new.png)}.osjs-icon[data-icon=call-start]{background-image:url(icons/call-start.png)}.osjs-icon[data-icon=call-stop]{background-image:url(icons/call-stop.png)}.osjs-icon[data-icon=contact-new]{background-image:url(icons/contact-new.png)}.osjs-icon[data-icon=document-new]{background-image:url(icons/document-new.png)}.osjs-icon[data-icon=document-open-recent]{background-image:url(icons/document-open-recent.png)}.osjs-icon[data-icon=document-open]{background-image:url(icons/document-open.png)}.osjs-icon[data-icon=document-page-setup]{background-image:url(icons/document-page-setup.png)}.osjs-icon[data-icon=document-print-preview]{background-image:url(icons/document-print-preview.png)}.osjs-icon[data-icon=document-print]{background-image:url(icons/document-print.png)}.osjs-icon[data-icon=document-properties]{background-image:url(icons/document-properties.png)}.osjs-icon[data-icon=document-revert-rtl]{background-image:url(icons/document-revert-rtl.png)}.osjs-icon[data-icon=document-revert]{background-image:url(icons/document-revert.png)}.osjs-icon[data-icon=document-save-as]{background-image:url(icons/document-save-as.png)}.osjs-icon[data-icon=document-save]{background-image:url(icons/document-save.png)}.osjs-icon[data-icon=document-send]{background-image:url(icons/document-send.png)}.osjs-icon[data-icon=edit-clear-all]{background-image:url(icons/edit-clear-all.png)}.osjs-icon[data-icon=edit-clear-rtl]{background-image:url(icons/edit-clear-rtl.png)}.osjs-icon[data-icon=edit-clear]{background-image:url(icons/edit-clear.png)}.osjs-icon[data-icon=edit-copy]{background-image:url(icons/edit-copy.png)}.osjs-icon[data-icon=edit-cut]{background-image:url(icons/edit-cut.png)}.osjs-icon[data-icon=edit-delete]{background-image:url(icons/edit-delete.png)}.osjs-icon[data-icon=edit-find-replace]{background-image:url(icons/edit-find-replace.png)}.osjs-icon[data-icon=edit-find]{background-image:url(icons/edit-find.png)}.osjs-icon[data-icon=edit-paste]{background-image:url(icons/edit-paste.png)}.osjs-icon[data-icon=edit-redo-rtl]{background-image:url(icons/edit-redo-rtl.png)}.osjs-icon[data-icon=edit-redo]{background-image:url(icons/edit-redo.png)}.osjs-icon[data-icon=edit-select-all]{background-image:url(icons/edit-select-all.png)}.osjs-icon[data-icon=edit-undo-rtl]{background-image:url(icons/edit-undo-rtl.png)}.osjs-icon[data-icon=edit-undo]{background-image:url(icons/edit-undo.png)}.osjs-icon[data-icon=folder-new]{background-image:url(icons/folder-new.png)}.osjs-icon[data-icon=format-indent-less-rtl]{background-image:url(icons/format-indent-less-rtl.png)}.osjs-icon[data-icon=format-indent-less]{background-image:url(icons/format-indent-less.png)}.osjs-icon[data-icon=format-indent-more-rtl]{background-image:url(icons/format-indent-more-rtl.png)}.osjs-icon[data-icon=format-indent-more]{background-image:url(icons/format-indent-more.png)}.osjs-icon[data-icon=format-justify-center]{background-image:url(icons/format-justify-center.png)}.osjs-icon[data-icon=format-justify-fill]{background-image:url(icons/format-justify-fill.png)}.osjs-icon[data-icon=format-justify-left]{background-image:url(icons/format-justify-left.png)}.osjs-icon[data-icon=format-justify-right]{background-image:url(icons/format-justify-right.png)}.osjs-icon[data-icon=format-text-bold]{background-image:url(icons/format-text-bold.png)}.osjs-icon[data-icon=format-text-direction-ltr]{background-image:url(icons/format-text-direction-ltr.png)}.osjs-icon[data-icon=format-text-direction-rtl]{background-image:url(icons/format-text-direction-rtl.png)}.osjs-icon[data-icon=format-text-italic]{background-image:url(icons/format-text-italic.png)}.osjs-icon[data-icon=format-text-strikethrough]{background-image:url(icons/format-text-strikethrough.png)}.osjs-icon[data-icon=format-text-underline]{background-image:url(icons/format-text-underline.png)}.osjs-icon[data-icon=go-bottom]{background-image:url(icons/go-bottom.png)}.osjs-icon[data-icon=go-down]{background-image:url(icons/go-down.png)}.osjs-icon[data-icon=go-first-rtl]{background-image:url(icons/go-first-rtl.png)}.osjs-icon[data-icon=go-first]{background-image:url(icons/go-first.png)}.osjs-icon[data-icon=go-home]{background-image:url(icons/go-home.png)}.osjs-icon[data-icon=go-jump]{background-image:url(icons/go-jump.png)}.osjs-icon[data-icon=go-last-rtl]{background-image:url(icons/go-last-rtl.png)}.osjs-icon[data-icon=go-last]{background-image:url(icons/go-last.png)}.osjs-icon[data-icon=go-next-rtl]{background-image:url(icons/go-next-rtl.png)}.osjs-icon[data-icon=go-next]{background-image:url(icons/go-next.png)}.osjs-icon[data-icon=go-previous-rtl]{background-image:url(icons/go-previous-rtl.png)}.osjs-icon[data-icon=go-previous]{background-image:url(icons/go-previous.png)}.osjs-icon[data-icon=go-top]{background-image:url(icons/go-top.png)}.osjs-icon[data-icon=go-up]{background-image:url(icons/go-up.png)}.osjs-icon[data-icon=help-about]{background-image:url(icons/help-about.png)}.osjs-icon[data-icon=help-contents]{background-image:url(icons/help-contents.png)}.osjs-icon[data-icon=help-faq]{background-image:url(icons/help-faq.png)}.osjs-icon[data-icon=insert-image]{background-image:url(icons/insert-image.png)}.osjs-icon[data-icon=insert-link]{background-image:url(icons/insert-link.png)}.osjs-icon[data-icon=insert-object]{background-image:url(icons/insert-object.png)}.osjs-icon[data-icon=insert-text]{background-image:url(icons/insert-text.png)}.osjs-icon[data-icon=list-add]{background-image:url(icons/list-add.png)}.osjs-icon[data-icon=list-remove]{background-image:url(icons/list-remove.png)}.osjs-icon[data-icon=mail-forward]{background-image:url(icons/mail-forward.png)}.osjs-icon[data-icon=mail-mark-important]{background-image:url(icons/mail-mark-important.png)}.osjs-icon[data-icon=mail-mark-junk]{background-image:url(icons/mail-mark-junk.png)}.osjs-icon[data-icon=mail-mark-notjunk]{background-image:url(icons/mail-mark-notjunk.png)}.osjs-icon[data-icon=mail-mark-read]{background-image:url(icons/mail-mark-read.png)}.osjs-icon[data-icon=mail-mark-unread]{background-image:url(icons/mail-mark-unread.png)}.osjs-icon[data-icon=mail-message-new]{background-image:url(icons/mail-message-new.png)}.osjs-icon[data-icon=mail-reply-all]{background-image:url(icons/mail-reply-all.png)}.osjs-icon[data-icon=mail-reply-sender]{background-image:url(icons/mail-reply-sender.png)}.osjs-icon[data-icon=mail-send-receive]{background-image:url(icons/mail-send-receive.png)}.osjs-icon[data-icon=mail-send]{background-image:url(icons/mail-send.png)}.osjs-icon[data-icon=mark-location]{background-image:url(icons/mark-location.png)}.osjs-icon[data-icon=media-eject]{background-image:url(icons/media-eject.png)}.osjs-icon[data-icon=media-playback-pause]{background-image:url(icons/media-playback-pause.png)}.osjs-icon[data-icon=media-playback-start-rtl]{background-image:url(icons/media-playback-start-rtl.png)}.osjs-icon[data-icon=media-playback-start]{background-image:url(icons/media-playback-start.png)}.osjs-icon[data-icon=media-playback-stop]{background-image:url(icons/media-playback-stop.png)}.osjs-icon[data-icon=media-record]{background-image:url(icons/media-record.png)}.osjs-icon[data-icon=media-seek-backward-rtl]{background-image:url(icons/media-seek-backward-rtl.png)}.osjs-icon[data-icon=media-seek-backward]{background-image:url(icons/media-seek-backward.png)}.osjs-icon[data-icon=media-seek-forward-rtl]{background-image:url(icons/media-seek-forward-rtl.png)}.osjs-icon[data-icon=media-seek-forward]{background-image:url(icons/media-seek-forward.png)}.osjs-icon[data-icon=media-skip-backward-rtl]{background-image:url(icons/media-skip-backward-rtl.png)}.osjs-icon[data-icon=media-skip-backward]{background-image:url(icons/media-skip-backward.png)}.osjs-icon[data-icon=media-skip-forward-rtl]{background-image:url(icons/media-skip-forward-rtl.png)}.osjs-icon[data-icon=media-skip-forward]{background-image:url(icons/media-skip-forward.png)}.osjs-icon[data-icon=object-flip-horizontal]{background-image:url(icons/object-flip-horizontal.png)}.osjs-icon[data-icon=object-flip-vertical]{background-image:url(icons/object-flip-vertical.png)}.osjs-icon[data-icon=object-rotate-left]{background-image:url(icons/object-rotate-left.png)}.osjs-icon[data-icon=object-rotate-right]{background-image:url(icons/object-rotate-right.png)}.osjs-icon[data-icon=process-stop]{background-image:url(icons/process-stop.png)}.osjs-icon[data-icon=system-lock-screen]{background-image:url(icons/system-lock-screen.png)}.osjs-icon[data-icon=system-log-out]{background-image:url(icons/system-log-out.png)}.osjs-icon[data-icon=system-run]{background-image:url(icons/system-run.png)}.osjs-icon[data-icon=system-search]{background-image:url(icons/system-search.png)}.osjs-icon[data-icon=system-shutdown]{background-image:url(icons/system-shutdown.png)}.osjs-icon[data-icon=tools-check-spelling]{background-image:url(icons/tools-check-spelling.png)}.osjs-icon[data-icon=view-fullscreen]{background-image:url(icons/view-fullscreen.png)}.osjs-icon[data-icon=view-refresh]{background-image:url(icons/view-refresh.png)}.osjs-icon[data-icon=view-restore]{background-image:url(icons/view-restore.png)}.osjs-icon[data-icon=view-sort-ascending]{background-image:url(icons/view-sort-ascending.png)}.osjs-icon[data-icon=view-sort-descending]{background-image:url(icons/view-sort-descending.png)}.osjs-icon[data-icon=window-close]{background-image:url(icons/window-close.png)}.osjs-icon[data-icon=window-new]{background-image:url(icons/window-new.png)}.osjs-icon[data-icon=zoom-fit-best]{background-image:url(icons/zoom-fit-best.png)}.osjs-icon[data-icon=zoom-in]{background-image:url(icons/zoom-in.png)}.osjs-icon[data-icon=zoom-original]{background-image:url(icons/zoom-original.png)}.osjs-icon[data-icon=zoom-out]{background-image:url(icons/zoom-out.png)}.osjs-icon[data-icon=accessories-calculator]{background-image:url(icons/accessories-calculator.png)}.osjs-icon[data-icon=accessories-character-map]{background-image:url(icons/accessories-character-map.png)}.osjs-icon[data-icon=accessories-dictionary]{background-image:url(icons/accessories-dictionary.png)}.osjs-icon[data-icon=accessories-text-editor]{background-image:url(icons/accessories-text-editor.png)}.osjs-icon[data-icon=applets-screenshooter]{background-image:url(icons/applets-screenshooter.png)}.osjs-icon[data-icon=help-browser]{background-image:url(icons/help-browser.png)}.osjs-icon[data-icon=multimedia-volume-control]{background-image:url(icons/multimedia-volume-control.png)}.osjs-icon[data-icon=preferences-desktop-accessibility]{background-image:url(icons/preferences-desktop-accessibility.png)}.osjs-icon[data-icon=preferences-desktop-display]{background-image:url(icons/preferences-desktop-display.png)}.osjs-icon[data-icon=preferences-desktop-font]{background-image:url(icons/preferences-desktop-font.png)}.osjs-icon[data-icon=preferences-desktop-keyboard-shortcuts]{background-image:url(icons/preferences-desktop-keyboard-shortcuts.png)}.osjs-icon[data-icon=preferences-desktop-keyboard]{background-image:url(icons/preferences-desktop-keyboard.png)}.osjs-icon[data-icon=preferences-desktop-locale]{background-image:url(icons/preferences-desktop-locale.png)}.osjs-icon[data-icon=preferences-desktop-remote-desktop]{background-image:url(icons/preferences-desktop-remote-desktop.png)}.osjs-icon[data-icon=preferences-desktop-screensaver]{background-image:url(icons/preferences-desktop-screensaver.png)}.osjs-icon[data-icon=preferences-desktop-theme]{background-image:url(icons/preferences-desktop-theme.png)}.osjs-icon[data-icon=preferences-desktop-wallpaper]{background-image:url(icons/preferences-desktop-wallpaper.png)}.osjs-icon[data-icon=preferences-system-notifications]{background-image:url(icons/preferences-system-notifications.png)}.osjs-icon[data-icon=preferences-system-privacy]{background-image:url(icons/preferences-system-privacy.png)}.osjs-icon[data-icon=preferences-system-search]{background-image:url(icons/preferences-system-search.png)}.osjs-icon[data-icon=preferences-system-sharing]{background-image:url(icons/preferences-system-sharing.png)}.osjs-icon[data-icon=preferences-system-windows]{background-image:url(icons/preferences-system-windows.png)}.osjs-icon[data-icon=system-file-manager]{background-image:url(icons/system-file-manager.png)}.osjs-icon[data-icon=system-software-install]{background-image:url(icons/system-software-install.png)}.osjs-icon[data-icon=system-software-update]{background-image:url(icons/system-software-update.png)}.osjs-icon[data-icon=system-users]{background-image:url(icons/system-users.png)}.osjs-icon[data-icon=user-info]{background-image:url(icons/user-info.png)}.osjs-icon[data-icon=utilities-system-monitor]{background-image:url(icons/utilities-system-monitor.png)}.osjs-icon[data-icon=utilities-terminal]{background-image:url(icons/utilities-terminal.png)}.osjs-icon[data-icon=web-browser]{background-image:url(icons/web-browser.png)}.osjs-icon[data-icon=applications-accessories]{background-image:url(icons/applications-accessories.png)}.osjs-icon[data-icon=applications-development]{background-image:url(icons/applications-development.png)}.osjs-icon[data-icon=applications-engineering]{background-image:url(icons/applications-engineering.png)}.osjs-icon[data-icon=applications-games]{background-image:url(icons/applications-games.png)}.osjs-icon[data-icon=applications-graphics]{background-image:url(icons/applications-graphics.png)}.osjs-icon[data-icon=applications-internet]{background-image:url(icons/applications-internet.png)}.osjs-icon[data-icon=applications-multimedia]{background-image:url(icons/applications-multimedia.png)}.osjs-icon[data-icon=applications-office]{background-image:url(icons/applications-office.png)}.osjs-icon[data-icon=applications-other]{background-image:url(icons/applications-other.png)}.osjs-icon[data-icon=applications-science]{background-image:url(icons/applications-science.png)}.osjs-icon[data-icon=applications-system]{background-image:url(icons/applications-system.png)}.osjs-icon[data-icon=applications-utilities]{background-image:url(icons/applications-utilities.png)}.osjs-icon[data-icon=preferences-desktop-peripherals]{background-image:url(icons/preferences-desktop-peripherals.png)}.osjs-icon[data-icon=preferences-desktop-personal]{background-image:url(icons/preferences-desktop-personal.png)}.osjs-icon[data-icon=preferences-desktop]{background-image:url(icons/preferences-desktop.png)}.osjs-icon[data-icon=preferences-other]{background-image:url(icons/preferences-other.png)}.osjs-icon[data-icon=preferences-system-network]{background-image:url(icons/preferences-system-network.png)}.osjs-icon[data-icon=preferences-system]{background-image:url(icons/preferences-system.png)}.osjs-icon[data-icon=system-help]{background-image:url(icons/system-help.png)}.osjs-icon[data-icon=ac-adapter]{background-image:url(icons/ac-adapter.png)}.osjs-icon[data-icon=audio-card]{background-image:url(icons/audio-card.png)}.osjs-icon[data-icon=audio-headphones]{background-image:url(icons/audio-headphones.png)}.osjs-icon[data-icon=audio-headset]{background-image:url(icons/audio-headset.png)}.osjs-icon[data-icon=audio-input-microphone]{background-image:url(icons/audio-input-microphone.png)}.osjs-icon[data-icon=audio-speakers]{background-image:url(icons/audio-speakers.png)}.osjs-icon[data-icon=battery]{background-image:url(icons/battery.png)}.osjs-icon[data-icon=camera-photo]{background-image:url(icons/camera-photo.png)}.osjs-icon[data-icon=camera-video]{background-image:url(icons/camera-video.png)}.osjs-icon[data-icon=camera-web]{background-image:url(icons/camera-web.png)}.osjs-icon[data-icon=computer]{background-image:url(icons/computer.png)}.osjs-icon[data-icon=drive-harddisk]{background-image:url(icons/drive-harddisk.png)}.osjs-icon[data-icon=drive-multidisk]{background-image:url(icons/drive-multidisk.png)}.osjs-icon[data-icon=drive-optical]{background-image:url(icons/drive-optical.png)}.osjs-icon[data-icon=drive-removable-media]{background-image:url(icons/drive-removable-media.png)}.osjs-icon[data-icon=ebook-reader]{background-image:url(icons/ebook-reader.png)}.osjs-icon[data-icon=input-dialpad]{background-image:url(icons/input-dialpad.png)}.osjs-icon[data-icon=input-gaming]{background-image:url(icons/input-gaming.png)}.osjs-icon[data-icon=input-keyboard]{background-image:url(icons/input-keyboard.png)}.osjs-icon[data-icon=input-mouse]{background-image:url(icons/input-mouse.png)}.osjs-icon[data-icon=input-tablet]{background-image:url(icons/input-tablet.png)}.osjs-icon[data-icon=input-touchpad]{background-image:url(icons/input-touchpad.png)}.osjs-icon[data-icon=media-flash]{background-image:url(icons/media-flash.png)}.osjs-icon[data-icon=media-floppy]{background-image:url(icons/media-floppy.png)}.osjs-icon[data-icon=media-optical]{background-image:url(icons/media-optical.png)}.osjs-icon[data-icon=media-removable]{background-image:url(icons/media-removable.png)}.osjs-icon[data-icon=media-tape]{background-image:url(icons/media-tape.png)}.osjs-icon[data-icon=modem]{background-image:url(icons/modem.png)}.osjs-icon[data-icon=multimedia-player]{background-image:url(icons/multimedia-player.png)}.osjs-icon[data-icon=network-vpn]{background-image:url(icons/network-vpn.png)}.osjs-icon[data-icon=network-wired]{background-image:url(icons/network-wired.png)}.osjs-icon[data-icon=network-wireless]{background-image:url(icons/network-wireless.png)}.osjs-icon[data-icon=pda]{background-image:url(icons/pda.png)}.osjs-icon[data-icon=phone]{background-image:url(icons/phone.png)}.osjs-icon[data-icon=printer-network]{background-image:url(icons/printer-network.png)}.osjs-icon[data-icon=printer]{background-image:url(icons/printer.png)}.osjs-icon[data-icon=scanner]{background-image:url(icons/scanner.png)}.osjs-icon[data-icon=uninterruptible-power-supply]{background-image:url(icons/uninterruptible-power-supply.png)}.osjs-icon[data-icon=video-display]{background-image:url(icons/video-display.png)}.osjs-icon[data-icon=emblem-default]{background-image:url(icons/emblem-default.png)}.osjs-icon[data-icon=emblem-desktop]{background-image:url(icons/emblem-desktop.png)}.osjs-icon[data-icon=emblem-documents]{background-image:url(icons/emblem-documents.png)}.osjs-icon[data-icon=emblem-downloads]{background-image:url(icons/emblem-downloads.png)}.osjs-icon[data-icon=emblem-favorite]{background-image:url(icons/emblem-favorite.png)}.osjs-icon[data-icon=emblem-generic]{background-image:url(icons/emblem-generic.png)}.osjs-icon[data-icon=emblem-important]{background-image:url(icons/emblem-important.png)}.osjs-icon[data-icon=emblem-mail]{background-image:url(icons/emblem-mail.png)}.osjs-icon[data-icon=emblem-new]{background-image:url(icons/emblem-new.png)}.osjs-icon[data-icon=emblem-package]{background-image:url(icons/emblem-package.png)}.osjs-icon[data-icon=emblem-photos]{background-image:url(icons/emblem-photos.png)}.osjs-icon[data-icon=emblem-readonly]{background-image:url(icons/emblem-readonly.png)}.osjs-icon[data-icon=emblem-shared]{background-image:url(icons/emblem-shared.png)}.osjs-icon[data-icon=emblem-symbolic-link]{background-image:url(icons/emblem-symbolic-link.png)}.osjs-icon[data-icon=emblem-synchronizing]{background-image:url(icons/emblem-synchronizing.png)}.osjs-icon[data-icon=emblem-system]{background-image:url(icons/emblem-system.png)}.osjs-icon[data-icon=emblem-unreadable]{background-image:url(icons/emblem-unreadable.png)}.osjs-icon[data-icon=emblem-urgent]{background-image:url(icons/emblem-urgent.png)}.osjs-icon[data-icon=emblem-web]{background-image:url(icons/emblem-web.png)}.osjs-icon[data-icon=emote-love]{background-image:url(icons/emote-love.png)}.osjs-icon[data-icon=face-angel]{background-image:url(icons/face-angel.png)}.osjs-icon[data-icon=face-angry]{background-image:url(icons/face-angry.png)}.osjs-icon[data-icon=face-cool]{background-image:url(icons/face-cool.png)}.osjs-icon[data-icon=face-crying]{background-image:url(icons/face-crying.png)}.osjs-icon[data-icon=face-devilish]{background-image:url(icons/face-devilish.png)}.osjs-icon[data-icon=face-embarrassed]{background-image:url(icons/face-embarrassed.png)}.osjs-icon[data-icon=face-glasses]{background-image:url(icons/face-glasses.png)}.osjs-icon[data-icon=face-kiss]{background-image:url(icons/face-kiss.png)}.osjs-icon[data-icon=face-laugh]{background-image:url(icons/face-laugh.png)}.osjs-icon[data-icon=face-monkey]{background-image:url(icons/face-monkey.png)}.osjs-icon[data-icon=face-plain]{background-image:url(icons/face-plain.png)}.osjs-icon[data-icon=face-raspberry]{background-image:url(icons/face-raspberry.png)}.osjs-icon[data-icon=face-sad]{background-image:url(icons/face-sad.png)}.osjs-icon[data-icon=face-sick]{background-image:url(icons/face-sick.png)}.osjs-icon[data-icon=face-smile-big]{background-image:url(icons/face-smile-big.png)}.osjs-icon[data-icon=face-smile]{background-image:url(icons/face-smile.png)}.osjs-icon[data-icon=face-smirk]{background-image:url(icons/face-smirk.png)}.osjs-icon[data-icon=face-surprise]{background-image:url(icons/face-surprise.png)}.osjs-icon[data-icon=face-tired]{background-image:url(icons/face-tired.png)}.osjs-icon[data-icon=face-uncertain]{background-image:url(icons/face-uncertain.png)}.osjs-icon[data-icon=face-wink]{background-image:url(icons/face-wink.png)}.osjs-icon[data-icon=face-worried]{background-image:url(icons/face-worried.png)}.osjs-icon[data-icon=application-certificate]{background-image:url(icons/application-certificate.png)}.osjs-icon[data-icon=application-x-addon]{background-image:url(icons/application-x-addon.png)}.osjs-icon[data-icon=application-x-executable]{background-image:url(icons/application-x-executable.png)}.osjs-icon[data-icon=application-x-firmware]{background-image:url(icons/application-x-firmware.png)}.osjs-icon[data-icon=audio-x-generic]{background-image:url(icons/audio-x-generic.png)}.osjs-icon[data-icon=font-x-generic]{background-image:url(icons/font-x-generic.png)}.osjs-icon[data-icon=image-x-generic]{background-image:url(icons/image-x-generic.png)}.osjs-icon[data-icon=package-x-generic]{background-image:url(icons/package-x-generic.png)}.osjs-icon[data-icon=text-html]{background-image:url(icons/text-html.png)}.osjs-icon[data-icon=text-x-generic-template]{background-image:url(icons/text-x-generic-template.png)}.osjs-icon[data-icon=text-x-generic]{background-image:url(icons/text-x-generic.png)}.osjs-icon[data-icon=text-x-preview]{background-image:url(icons/text-x-preview.png)}.osjs-icon[data-icon=text-x-script]{background-image:url(icons/text-x-script.png)}.osjs-icon[data-icon=video-x-generic]{background-image:url(icons/video-x-generic.png)}.osjs-icon[data-icon=x-office-address-book]{background-image:url(icons/x-office-address-book.png)}.osjs-icon[data-icon=x-office-calendar]{background-image:url(icons/x-office-calendar.png)}.osjs-icon[data-icon=x-office-document-template]{background-image:url(icons/x-office-document-template.png)}.osjs-icon[data-icon=x-office-document]{background-image:url(icons/x-office-document.png)}.osjs-icon[data-icon=x-office-drawing-template]{background-image:url(icons/x-office-drawing-template.png)}.osjs-icon[data-icon=x-office-drawing]{background-image:url(icons/x-office-drawing.png)}.osjs-icon[data-icon=x-office-presentation-template]{background-image:url(icons/x-office-presentation-template.png)}.osjs-icon[data-icon=x-office-presentation]{background-image:url(icons/x-office-presentation.png)}.osjs-icon[data-icon=x-office-spreadsheet-template]{background-image:url(icons/x-office-spreadsheet-template.png)}.osjs-icon[data-icon=x-office-spreadsheet]{background-image:url(icons/x-office-spreadsheet.png)}.osjs-icon[data-icon=x-package-repository]{background-image:url(icons/x-package-repository.png)}.osjs-icon[data-icon=folder-documents]{background-image:url(icons/folder-documents.png)}.osjs-icon[data-icon=folder-download]{background-image:url(icons/folder-download.png)}.osjs-icon[data-icon=folder-music]{background-image:url(icons/folder-music.png)}.osjs-icon[data-icon=folder-pictures]{background-image:url(icons/folder-pictures.png)}.osjs-icon[data-icon=folder-publicshare]{background-image:url(icons/folder-publicshare.png)}.osjs-icon[data-icon=folder-remote]{background-image:url(icons/folder-remote.png)}.osjs-icon[data-icon=folder-saved-search]{background-image:url(icons/folder-saved-search.png)}.osjs-icon[data-icon=folder-templates]{background-image:url(icons/folder-templates.png)}.osjs-icon[data-icon=folder-videos]{background-image:url(icons/folder-videos.png)}.osjs-icon[data-icon=folder]{background-image:url(icons/folder.png)}.osjs-icon[data-icon=network-server]{background-image:url(icons/network-server.png)}.osjs-icon[data-icon=network-workgroup]{background-image:url(icons/network-workgroup.png)}.osjs-icon[data-icon=start-here]{background-image:url(icons/start-here.png)}.osjs-icon[data-icon=user-bookmarks]{background-image:url(icons/user-bookmarks.png)}.osjs-icon[data-icon=user-desktop]{background-image:url(icons/user-desktop.png)}.osjs-icon[data-icon=user-home]{background-image:url(icons/user-home.png)}.osjs-icon[data-icon=user-trash]{background-image:url(icons/user-trash.png)}.osjs-icon[data-icon=appointment-missed]{background-image:url(icons/appointment-missed.png)}.osjs-icon[data-icon=appointment-soon]{background-image:url(icons/appointment-soon.png)}.osjs-icon[data-icon=audio-volume-high]{background-image:url(icons/audio-volume-high.png)}.osjs-icon[data-icon=audio-volume-low]{background-image:url(icons/audio-volume-low.png)}.osjs-icon[data-icon=audio-volume-medium]{background-image:url(icons/audio-volume-medium.png)}.osjs-icon[data-icon=audio-volume-muted]{background-image:url(icons/audio-volume-muted.png)}.osjs-icon[data-icon=avatar-default]{background-image:url(icons/avatar-default.png)}.osjs-icon[data-icon=battery-caution-charging]{background-image:url(icons/battery-caution-charging.png)}.osjs-icon[data-icon=battery-caution]{background-image:url(icons/battery-caution.png)}.osjs-icon[data-icon=battery-empty]{background-image:url(icons/battery-empty.png)}.osjs-icon[data-icon=battery-full-charged]{background-image:url(icons/battery-full-charged.png)}.osjs-icon[data-icon=battery-full-charging]{background-image:url(icons/battery-full-charging.png)}.osjs-icon[data-icon=battery-full]{background-image:url(icons/battery-full.png)}.osjs-icon[data-icon=battery-good-charging]{background-image:url(icons/battery-good-charging.png)}.osjs-icon[data-icon=battery-good]{background-image:url(icons/battery-good.png)}.osjs-icon[data-icon=battery-low-charging]{background-image:url(icons/battery-low-charging.png)}.osjs-icon[data-icon=battery-low]{background-image:url(icons/battery-low.png)}.osjs-icon[data-icon=battery-missing]{background-image:url(icons/battery-missing.png)}.osjs-icon[data-icon=changes-allow]{background-image:url(icons/changes-allow.png)}.osjs-icon[data-icon=changes-prevent]{background-image:url(icons/changes-prevent.png)}.osjs-icon[data-icon=computer-fail]{background-image:url(icons/computer-fail.png)}.osjs-icon[data-icon=dialog-error]{background-image:url(icons/dialog-error.png)}.osjs-icon[data-icon=dialog-information]{background-image:url(icons/dialog-information.png)}.osjs-icon[data-icon=dialog-password]{background-image:url(icons/dialog-password.png)}.osjs-icon[data-icon=dialog-question]{background-image:url(icons/dialog-question.png)}.osjs-icon[data-icon=dialog-warning]{background-image:url(icons/dialog-warning.png)}.osjs-icon[data-icon=folder-drag-accept]{background-image:url(icons/folder-drag-accept.png)}.osjs-icon[data-icon=folder-open]{background-image:url(icons/folder-open.png)}.osjs-icon[data-icon=folder-visiting]{background-image:url(icons/folder-visiting.png)}.osjs-icon[data-icon=image-loading]{background-image:url(icons/image-loading.png)}.osjs-icon[data-icon=image-missing]{background-image:url(icons/image-missing.png)}.osjs-icon[data-icon=mail-attachment]{background-image:url(icons/mail-attachment.png)}.osjs-icon[data-icon=mail-read]{background-image:url(icons/mail-read.png)}.osjs-icon[data-icon=mail-replied]{background-image:url(icons/mail-replied.png)}.osjs-icon[data-icon=mail-unread]{background-image:url(icons/mail-unread.png)}.osjs-icon[data-icon=media-playlist-repeat]{background-image:url(icons/media-playlist-repeat.png)}.osjs-icon[data-icon=media-playlist-shuffle]{background-image:url(icons/media-playlist-shuffle.png)}.osjs-icon[data-icon=microphone-sensitivity-high]{background-image:url(icons/microphone-sensitivity-high.png)}.osjs-icon[data-icon=microphone-sensitivity-low]{background-image:url(icons/microphone-sensitivity-low.png)}.osjs-icon[data-icon=microphone-sensitivity-medium]{background-image:url(icons/microphone-sensitivity-medium.png)}.osjs-icon[data-icon=microphone-sensitivity-muted]{background-image:url(icons/microphone-sensitivity-muted.png)}.osjs-icon[data-icon=network-cellular-connected]{background-image:url(icons/network-cellular-connected.png)}.osjs-icon[data-icon=network-error]{background-image:url(icons/network-error.png)}.osjs-icon[data-icon=network-idle]{background-image:url(icons/network-idle.png)}.osjs-icon[data-icon=network-offline]{background-image:url(icons/network-offline.png)}.osjs-icon[data-icon=network-receive]{background-image:url(icons/network-receive.png)}.osjs-icon[data-icon=network-transmit-receive]{background-image:url(icons/network-transmit-receive.png)}.osjs-icon[data-icon=network-transmit]{background-image:url(icons/network-transmit.png)}.osjs-icon[data-icon=network-wired-disconnected]{background-image:url(icons/network-wired-disconnected.png)}.osjs-icon[data-icon=non-starred]{background-image:url(icons/non-starred.png)}.osjs-icon[data-icon=printer-error]{background-image:url(icons/printer-error.png)}.osjs-icon[data-icon=printer-printing]{background-image:url(icons/printer-printing.png)}.osjs-icon[data-icon=security-high]{background-image:url(icons/security-high.png)}.osjs-icon[data-icon=security-low]{background-image:url(icons/security-low.png)}.osjs-icon[data-icon=security-medium]{background-image:url(icons/security-medium.png)}.osjs-icon[data-icon=semi-starred-rtl]{background-image:url(icons/semi-starred-rtl.png)}.osjs-icon[data-icon=semi-starred]{background-image:url(icons/semi-starred.png)}.osjs-icon[data-icon=software-update-available]{background-image:url(icons/software-update-available.png)}.osjs-icon[data-icon=software-update-urgent]{background-image:url(icons/software-update-urgent.png)}.osjs-icon[data-icon=starred]{background-image:url(icons/starred.png)}.osjs-icon[data-icon=task-due]{background-image:url(icons/task-due.png)}.osjs-icon[data-icon=task-past-due]{background-image:url(icons/task-past-due.png)}.osjs-icon[data-icon=trophy-bronze]{background-image:url(icons/trophy-bronze.png)}.osjs-icon[data-icon=trophy-gold]{background-image:url(icons/trophy-gold.png)}.osjs-icon[data-icon=trophy-silver]{background-image:url(icons/trophy-silver.png)}.osjs-icon[data-icon=user-available]{background-image:url(icons/user-available.png)}.osjs-icon[data-icon=user-away]{background-image:url(icons/user-away.png)}.osjs-icon[data-icon=user-busy]{background-image:url(icons/user-busy.png)}.osjs-icon[data-icon=user-idle]{background-image:url(icons/user-idle.png)}.osjs-icon[data-icon=user-invisible]{background-image:url(icons/user-invisible.png)}.osjs-icon[data-icon=user-offline]{background-image:url(icons/user-offline.png)}.osjs-icon[data-icon=user-trash-full]{background-image:url(icons/user-trash-full.png)}.osjs-icon[data-icon=weather-clear-night]{background-image:url(icons/weather-clear-night.png)}.osjs-icon[data-icon=weather-clear]{background-image:url(icons/weather-clear.png)}.osjs-icon[data-icon=weather-few-clouds-night]{background-image:url(icons/weather-few-clouds-night.png)}.osjs-icon[data-icon=weather-few-clouds]{background-image:url(icons/weather-few-clouds.png)}.osjs-icon[data-icon=weather-fog]{background-image:url(icons/weather-fog.png)}.osjs-icon[data-icon=weather-overcast]{background-image:url(icons/weather-overcast.png)}.osjs-icon[data-icon=weather-severe-alert]{background-image:url(icons/weather-severe-alert.png)}.osjs-icon[data-icon=weather-showers-scattered]{background-image:url(icons/weather-showers-scattered.png)}.osjs-icon[data-icon=weather-showers]{background-image:url(icons/weather-showers.png)}.osjs-icon[data-icon=weather-snow]{background-image:url(icons/weather-snow.png)}.osjs-icon[data-icon=weather-storm]{background-image:url(icons/weather-storm.png)}
+/* === JabyOS overrides — clean line-icons for the most visible names === */
+/* Use a Phosphor-style line weight, currentColor so they pick up theme color */
+
+[data-icon]{background-size:contain !important;background-repeat:no-repeat !important;background-position:center !important}
+
+[data-icon=folder],
+[data-icon=folder-documents],
+[data-icon=folder-download],
+[data-icon=folder-pictures],
+[data-icon=folder-music],
+[data-icon=folder-videos],
+[data-icon=folder-publicshare],
+[data-icon=inode-directory]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><path stroke='%2393c5fd' d='M3 11h18' opacity='0.7'/></svg>") !important}
+
+[data-icon=folder-open]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v1H5l-2 10z'/><path d='M3 19l2-10h18l-2 10z'/></svg>") !important}
+
+[data-icon=user-home],
+[data-icon=go-home]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 11l9-8 9 8'/><path d='M5 10v10h14V10'/></svg>") !important}
+
+[data-icon=start-here]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='7' height='7' rx='1.5'/><rect x='14' y='3' width='7' height='7' rx='1.5'/><rect x='3' y='14' width='7' height='7' rx='1.5'/><rect x='14' y='14' width='7' height='7' rx='1.5'/></svg>") !important}
+
+[data-icon=preferences-system],
+[data-icon=preferences-desktop],
+[data-icon=applications-system]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important}
+
+[data-icon=system-shutdown],
+[data-icon=system-log-out]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v10'/><path d='M18.4 6.6a9 9 0 1 1-12.7 0'/></svg>") !important}
+
+[data-icon=system-file-manager],
+[data-icon=folder-remote],
+[data-icon=drive-harddisk]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='6' width='18' height='12' rx='2'/><circle cx='7.5' cy='12' r='1.2' fill='%233b82f6'/><path d='M11 12h7'/></svg>") !important}
+
+[data-icon=text-x-generic],
+[data-icon=text-plain]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>") !important}
+
+[data-icon=image-x-generic]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='1.6'/><path d='M21 16l-5-5-9 9'/></svg>") !important}
+
+[data-icon=audio-x-generic]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>") !important}
+
+[data-icon=video-x-generic]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ec4899' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='15' height='14' rx='2'/><path d='M18 10l4-2v8l-4-2z'/></svg>") !important}
+
+[data-icon=application-x-executable],
+[data-icon=applications-other]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 9h18'/><circle cx='6.5' cy='6.5' r='0.6' fill='%233b82f6'/><circle cx='9' cy='6.5' r='0.6' fill='%233b82f6'/></svg>") !important}
+
+[data-icon=utilities-terminal],
+[data-icon=applications-development]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M7 9l3 3-3 3M13 15h4'/></svg>") !important}
+
+[data-icon=accessories-calculator]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='2'/><rect x='7' y='6' width='10' height='4' rx='1'/><circle cx='8.5' cy='14' r='0.8' fill='%231b2236'/><circle cx='12' cy='14' r='0.8' fill='%231b2236'/><circle cx='15.5' cy='14' r='0.8' fill='%231b2236'/><circle cx='8.5' cy='17.5' r='0.8' fill='%231b2236'/><circle cx='12' cy='17.5' r='0.8' fill='%231b2236'/><circle cx='15.5' cy='17.5' r='0.8' fill='%231b2236'/></svg>") !important}
+
+[data-icon=accessories-text-editor]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M17 3l4 4-11 11H6v-4z'/><path d='M14 6l4 4'/></svg>") !important}
+
+[data-icon=applications-graphics]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3c4.5 0 9 4 9 8 0 3-2 5-5 5h-2a2 2 0 0 0-2 2v1a3 3 0 0 1-6 0v-1a9 9 0 0 1 6-15z'/><circle cx='7.5' cy='10.5' r='1.2' fill='%233b82f6'/><circle cx='12' cy='7.5' r='1.2' fill='%23f59e0b'/><circle cx='16.5' cy='10.5' r='1.2' fill='%2322c55e'/></svg>") !important}
+
+[data-icon=go-previous],
+[data-icon=go-back]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 6l-6 6 6 6'/></svg>") !important}
+
+[data-icon=go-next],
+[data-icon=go-forward]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 6l6 6-6 6'/></svg>") !important}
+
+[data-icon=view-refresh]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12a9 9 0 0 1 16-5.7'/><path d='M21 3v6h-6'/><path d='M21 12a9 9 0 0 1-16 5.7'/><path d='M3 21v-6h6'/></svg>") !important}
+
+[data-icon=edit-copy]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='8' width='12' height='12' rx='2'/><path d='M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2'/></svg>") !important}
+
+[data-icon=applications-multimedia]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M10 8l6 4-6 4z' fill='%23a855f7'/></svg>") !important}
+
+[data-icon=applications-internet]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M3 12h18'/><path d='M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18'/></svg>") !important}
+
+[data-icon=applications-office]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='2'/><path d='M8 8h8M8 12h8M8 16h5'/></svg>") !important}
+
+
+/* === Style-attribute overrides (OS.js sets background-image via JS inline style) === */
+
+.osjs-icon[style*="folder-publicshare"],
+.osjs-icon[style*="folder-remote"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><circle cx='12' cy='14' r='2.4'/><path d='M9.6 14h-3M17.4 14h-3' opacity='0.6'/></svg>") !important}
+
+.osjs-icon[style*="user-home"],
+.osjs-icon[style*="go-home"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 11l9-8 9 8'/><path d='M5 10v10h14V10'/></svg>") !important}
+
+.osjs-icon[style*="/folder."],
+.osjs-icon[style*="folder-documents"],
+.osjs-icon[style*="folder-download"],
+.osjs-icon[style*="folder-pictures"],
+.osjs-icon[style*="folder-music"],
+.osjs-icon[style*="folder-videos"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><path stroke='%2393c5fd' d='M3 11h18' opacity='0.7'/></svg>") !important}
+
+.osjs-icon[style*="system-shutdown"],
+.osjs-icon[style*="system-log-out"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v10'/><path d='M18.4 6.6a9 9 0 1 1-12.7 0'/></svg>") !important}
+
+/* === <img src> and system-search === */
+
+img[src*="/icons/JabyIcons/icons/system-search"],
+img[src*="/system-search.png"],
+.osjs-icon[style*="system-search"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><path d='m21 21-4.3-4.3'/></svg>");background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><path d='m21 21-4.3-4.3'/></svg>") !important}
+
+/* === App icons (shipped inside each /apps/<App>/icon.png) === */
+
+img[src$="/apps/FileManager/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>")}
+
+img[src$="/apps/Textpad/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f1f5f9'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>")}
+
+img[src$="/apps/Calculator/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='3' fill='%23eef2ff'/><rect x='7' y='6' width='10' height='4' rx='1' fill='%23bfdbfe' stroke='%233b82f6'/><circle cx='8.5' cy='14' r='1' fill='%231b2236'/><circle cx='12' cy='14' r='1' fill='%231b2236'/><circle cx='15.5' cy='14' r='1' fill='%233b82f6'/><circle cx='8.5' cy='17.5' r='1' fill='%231b2236'/><circle cx='12' cy='17.5' r='1' fill='%231b2236'/><circle cx='15.5' cy='17.5' r='1' fill='%233b82f6'/></svg>")}
+
+img[src$="/apps/Draw/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3c4.5 0 9 4 9 8 0 3-2 5-5 5h-2a2 2 0 0 0-2 2v1a3 3 0 0 1-6 0v-1a9 9 0 0 1 6-15z' fill='%23fef2f2'/><circle cx='7.5' cy='10.5' r='1.2' fill='%233b82f6' stroke='none'/><circle cx='12' cy='7.5' r='1.2' fill='%23f59e0b' stroke='none'/><circle cx='16.5' cy='10.5' r='1.2' fill='%2322c55e' stroke='none'/></svg>")}
+
+img[src$="/apps/MusicPlayer/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13' fill='%23faf5ff'/><circle cx='6' cy='18' r='3' fill='%23a855f7' stroke='none'/><circle cx='18' cy='16' r='3' fill='%23a855f7' stroke='none'/></svg>")}
+
+img[src$="/apps/Preview/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23fffbeb'/><circle cx='9' cy='10' r='1.8' fill='%23f59e0b' stroke='none'/><path d='M21 16l-5-5-9 9'/></svg>")}
+
+img[src$="/apps/HTMLViewer/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9' fill='%23eff6ff'/><path d='M3 12h18'/><path d='M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18'/></svg>")}
+
+img[src$="/apps/Settings/icon.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3' fill='%23f1f5f9'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>")}
+
+/* === Additional data-icon selectors === */
+
+[data-icon=applications-utilities]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.3-.7-.7-2.3z'/></svg>") !important}
+
+[data-icon=text-x-script],
+[data-icon=text-x-generic-template]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/><path d='M14 3v5h5'/><path d='M9 13l-2 2 2 2M13 13l2 2-2 2'/></svg>") !important}
+
+
+.osjs-icon[style*="go-previous"],
+.osjs-icon[style*="go-back"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 6l-6 6 6 6'/></svg>") !important}
+
+.osjs-icon[style*="go-next"],
+.osjs-icon[style*="go-forward"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 6l6 6-6 6'/></svg>") !important}
+
+.osjs-icon[style*="view-refresh"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12a9 9 0 0 1 16-5.7'/><path d='M21 3v6h-6'/><path d='M21 12a9 9 0 0 1-16 5.7'/><path d='M3 21v-6h6'/></svg>") !important}
+
+.osjs-icon[style*="edit-copy"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='8' y='8' width='12' height='12' rx='2'/><path d='M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2'/></svg>") !important}
+
+.osjs-icon[style*="text-x-generic"],
+.osjs-icon[style*="text-plain"],
+.osjs-icon[style*="text-x-script"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>") !important}
+
+.osjs-icon[style*="image-x-generic"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='1.6'/><path d='M21 16l-5-5-9 9'/></svg>") !important}
+
+.osjs-icon[style*="audio-x-generic"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>") !important}
+
+.osjs-icon[style*="video-x-generic"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ec4899' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='15' height='14' rx='2'/><path d='M18 10l4-2v8l-4-2z'/></svg>") !important}
+
+.osjs-icon[style*="application-x-executable"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 9h18'/></svg>") !important}
+
+.osjs-icon[style*="preferences-system"],
+.osjs-icon[style*="preferences-desktop"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important}
+
+.osjs-icon[style*="utilities-terminal"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M7 9l3 3-3 3M13 15h4'/></svg>") !important}
+
+.osjs-icon[style*="start-here"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='7' height='7' rx='1.5'/><rect x='14' y='3' width='7' height='7' rx='1.5'/><rect x='3' y='14' width='7' height='7' rx='1.5'/><rect x='14' y='14' width='7' height='7' rx='1.5'/></svg>") !important}
+
+.osjs-icon[style*="applications-utilities"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.3-.7-.7-2.3z'/></svg>") !important}
+
+
+/* === App icons also set via inline style (start menu, taskbar) === */
+
+.osjs-icon[style*="/apps/FileManager/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>") !important}
+
+.osjs-icon[style*="/apps/Textpad/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f1f5f9'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>") !important}
+
+.osjs-icon[style*="/apps/Calculator/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='3' fill='%23eef2ff'/><rect x='7' y='6' width='10' height='4' rx='1' fill='%23bfdbfe' stroke='%233b82f6'/><circle cx='8.5' cy='14' r='1' fill='%231b2236'/><circle cx='12' cy='14' r='1' fill='%231b2236'/><circle cx='15.5' cy='14' r='1' fill='%233b82f6'/><circle cx='8.5' cy='17.5' r='1' fill='%231b2236'/><circle cx='12' cy='17.5' r='1' fill='%231b2236'/><circle cx='15.5' cy='17.5' r='1' fill='%233b82f6'/></svg>") !important}
+
+.osjs-icon[style*="/apps/Draw/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3c4.5 0 9 4 9 8 0 3-2 5-5 5h-2a2 2 0 0 0-2 2v1a3 3 0 0 1-6 0v-1a9 9 0 0 1 6-15z' fill='%23fef2f2'/><circle cx='7.5' cy='10.5' r='1.2' fill='%233b82f6' stroke='none'/><circle cx='12' cy='7.5' r='1.2' fill='%23f59e0b' stroke='none'/><circle cx='16.5' cy='10.5' r='1.2' fill='%2322c55e' stroke='none'/></svg>") !important}
+
+.osjs-icon[style*="/apps/MusicPlayer/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13' fill='%23faf5ff'/><circle cx='6' cy='18' r='3' fill='%23a855f7' stroke='none'/><circle cx='18' cy='16' r='3' fill='%23a855f7' stroke='none'/></svg>") !important}
+
+.osjs-icon[style*="/apps/Preview/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23fffbeb'/><circle cx='9' cy='10' r='1.8' fill='%23f59e0b' stroke='none'/><path d='M21 16l-5-5-9 9'/></svg>") !important}
+
+.osjs-icon[style*="/apps/HTMLViewer/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9' fill='%23eff6ff'/><path d='M3 12h18'/><path d='M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18'/></svg>") !important}
+
+.osjs-icon[style*="/apps/Settings/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3' fill='%23f1f5f9'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important}
+
+/* === More MIME types === */
+
+[data-icon=text-html],
+.osjs-icon[style*="text-html"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f97316' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fff7ed'/><path d='M14 3v5h5'/><path d='M9 14l-2 1.5L9 17M15 14l2 1.5L15 17' stroke='%23f97316'/></svg>") !important}
+
+[data-icon=application-javascript],
+[data-icon=application-x-javascript],
+.osjs-icon[style*="application-javascript"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='2' fill='%23fffbeb'/><path d='M10 13v4c0 1-.5 1.5-1.5 1.5S7 18 7 17M17 14c0-.8-.7-1.5-1.5-1.5S14 13.2 14 14c0 1.5 3 1 3 2.5 0 .8-.7 1.5-1.5 1.5S14 17.3 14 16.5' stroke='%23f59e0b'/></svg>") !important}
+
+[data-icon=application-json],
+.osjs-icon[style*="application-json"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='2' fill='%23f0fdf4'/><path d='M9 7c-1.5 0-2 .5-2 2v2c0 1-.5 1.5-1 1.5.5 0 1 .5 1 1.5v2c0 1.5.5 2 2 2M15 7c1.5 0 2 .5 2 2v2c0 1 .5 1.5 1 1.5-.5 0-1 .5-1 1.5v2c0 1.5-.5 2-2 2'/></svg>") !important}
+
+
+/* === Catch-all: any element with app icon URL in inline style (e.g. <div>) === */
+
+[style*="/apps/FileManager/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>") !important}
+
+[style*="/apps/Textpad/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f1f5f9'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>") !important}
+
+[style*="/apps/Calculator/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='3' fill='%23eef2ff'/><rect x='7' y='6' width='10' height='4' rx='1' fill='%23bfdbfe' stroke='%233b82f6'/><circle cx='8.5' cy='14' r='1' fill='%231b2236'/><circle cx='12' cy='14' r='1' fill='%231b2236'/><circle cx='15.5' cy='14' r='1' fill='%233b82f6'/><circle cx='8.5' cy='17.5' r='1' fill='%231b2236'/><circle cx='12' cy='17.5' r='1' fill='%231b2236'/><circle cx='15.5' cy='17.5' r='1' fill='%233b82f6'/></svg>") !important}
+
+[style*="/apps/Draw/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3c4.5 0 9 4 9 8 0 3-2 5-5 5h-2a2 2 0 0 0-2 2v1a3 3 0 0 1-6 0v-1a9 9 0 0 1 6-15z' fill='%23fef2f2'/><circle cx='7.5' cy='10.5' r='1.2' fill='%233b82f6' stroke='none'/><circle cx='12' cy='7.5' r='1.2' fill='%23f59e0b' stroke='none'/><circle cx='16.5' cy='10.5' r='1.2' fill='%2322c55e' stroke='none'/></svg>") !important}
+
+[style*="/apps/MusicPlayer/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13' fill='%23faf5ff'/><circle cx='6' cy='18' r='3' fill='%23a855f7' stroke='none'/><circle cx='18' cy='16' r='3' fill='%23a855f7' stroke='none'/></svg>") !important}
+
+[style*="/apps/Preview/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23fffbeb'/><circle cx='9' cy='10' r='1.8' fill='%23f59e0b' stroke='none'/><path d='M21 16l-5-5-9 9'/></svg>") !important}
+
+[style*="/apps/HTMLViewer/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9' fill='%23eff6ff'/><path d='M3 12h18'/><path d='M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18'/></svg>") !important}
+
+[style*="/apps/Settings/icon.png"]{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3' fill='%23f1f5f9'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important}
+
+
+/* === <img src> mime icon overrides (search results, file lists) === */
+/* Generic file fallback — matches FIRST so specific rules below win */
+
+img[src^="/icons/JabyIcons/icons/"][src$=".png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f8fafc'/><path d='M14 3v5h5'/></svg>");
+}
+
+/* Specific mime overrides for <img> tag */
+img[src$="/text-x-generic.png"],
+img[src$="/text-plain.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f1f5f9'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>")}
+
+img[src$="/text-x-preview.png"],
+img[src$="/text-x-script.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23eff6ff'/><path d='M14 3v5h5'/><path d='M9 13l-2 2 2 2M13 13l2 2-2 2'/></svg>")}
+
+img[src$="/text-html.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f97316' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fff7ed'/><path d='M14 3v5h5'/><path d='M9 14l-2 1.5L9 17M15 14l2 1.5L15 17'/></svg>")}
+
+img[src$="/text-css.png"],
+img[src$="/application-css.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23eff6ff'/><path d='M14 3v5h5'/><text x='7.5' y='17' font-family='monospace' font-size='5' font-weight='700' fill='%233b82f6' stroke='none'>CSS</text></svg>")}
+
+img[src$="/application-javascript.png"],
+img[src$="/application-x-javascript.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fffbeb'/><path d='M14 3v5h5'/><text x='8.5' y='17' font-family='monospace' font-size='5.5' font-weight='700' fill='%23f59e0b' stroke='none'>JS</text></svg>")}
+
+img[src$="/application-json.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f0fdf4'/><path d='M14 3v5h5'/><text x='7' y='17' font-family='monospace' font-size='4.5' font-weight='700' fill='%2322c55e' stroke='none'>JSON</text></svg>")}
+
+img[src$="/application-pdf.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fef2f2'/><path d='M14 3v5h5'/><text x='8' y='17' font-family='monospace' font-size='5.5' font-weight='700' fill='%23ef4444' stroke='none'>PDF</text></svg>")}
+
+img[src$="/application-zip.png"],
+img[src$="/package-x-generic.png"],
+img[src$="/application-x-archive.png"],
+img[src$="/application-x-compressed-tar.png"],
+img[src$="/application-x-rar.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a16207' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fefce8'/><path d='M14 3v5h5'/><path d='M10 6v2M10 10v2M10 14v2'/><rect x='9' y='16' width='2' height='3' fill='%23a16207' stroke='none'/></svg>")}
+
+img[src$="/image-x-generic.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23fffbeb'/><circle cx='9' cy='10' r='1.6'/><path d='M21 16l-5-5-9 9'/></svg>")}
+
+img[src$="/audio-x-generic.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13' fill='%23faf5ff'/><circle cx='6' cy='18' r='3' fill='%23a855f7' stroke='none'/><circle cx='18' cy='16' r='3' fill='%23a855f7' stroke='none'/></svg>")}
+
+img[src$="/video-x-generic.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ec4899' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='15' height='14' rx='2' fill='%23fdf2f8'/><path d='M18 10l4-2v8l-4-2z' fill='%23ec4899' stroke='none'/></svg>")}
+
+img[src$="/application-x-executable.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23eff6ff'/><path d='M3 9h18'/><circle cx='6.5' cy='6.5' r='0.7' fill='%233b82f6'/><circle cx='9' cy='6.5' r='0.7' fill='%233b82f6'/></svg>")}
+
+img[src$="/folder.png"],
+img[src$="/inode-directory.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>")}
+
+img[src$="/folder-documents.png"],
+img[src$="/folder-download.png"],
+img[src$="/folder-pictures.png"],
+img[src$="/folder-music.png"],
+img[src$="/folder-videos.png"],
+img[src$="/folder-publicshare.png"],
+img[src$="/folder-remote.png"],
+img[src$="/user-home.png"]{content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>")}
+
+
+/* === Fix: force magnifier for system-search with !important (beats generic catchall) === */
+img[src*="system-search"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'/><path d='m21 21-4.3-4.3'/></svg>") !important;
+}
+
+/* === Fix: search result imgs have no sizing — our SVG renders at natural ~300px without this === */
+.osjs-search-result img,
+.osjs-gui-list-view-cell img,
+.osjs-gui-list-view-cell .osjs-icon,
+.osjs-desktop-iconview__entry img,
+.osjs-desktop-iconview__entry .osjs-icon{
+  width:32px !important;
+  height:32px !important;
+  object-fit:contain !important;
+  flex-shrink:0;
+}
+
+/* Smaller in list contexts where icons should be compact */
+.osjs-gui-list-view-cell img{
+  width:20px !important;
+  height:20px !important;
+}
+
+
+/* === Final override pass with !important — beats the generic catchall === */
+
+img[src$="/text-x-script.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23eff6ff'/><path d='M14 3v5h5'/><path d='M9 13l-2 2 2 2M13 13l2 2-2 2'/></svg>") !important;
+}
+
+img[src$="/text-x-generic.png"],
+img[src$="/text-plain.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f1f5f9'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h5'/></svg>") !important;
+}
+
+img[src$="/text-html.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23f97316' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23fff7ed'/><path d='M14 3v5h5'/><path d='M9 14l-2 1.5L9 17M15 14l2 1.5L15 17'/></svg>") !important;
+}
+
+img[src$="/image-x-generic.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23fffbeb'/><circle cx='9' cy='10' r='1.6'/><path d='M21 16l-5-5-9 9'/></svg>") !important;
+}
+
+img[src$="/audio-x-generic.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13' fill='%23faf5ff'/><circle cx='6' cy='18' r='3' fill='%23a855f7' stroke='none'/><circle cx='18' cy='16' r='3' fill='%23a855f7' stroke='none'/></svg>") !important;
+}
+
+img[src$="/video-x-generic.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23ec4899' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='15' height='14' rx='2' fill='%23fdf2f8'/><path d='M18 10l4-2v8l-4-2z' fill='%23ec4899' stroke='none'/></svg>") !important;
+}
+
+img[src$="/package-x-generic.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23a16207' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7l9-4 9 4v10l-9 4-9-4z' fill='%23fefce8'/><path d='M3 7l9 4 9-4M12 11v10'/></svg>") !important;
+}
+
+img[src$="/application-x-executable.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='16' rx='2' fill='%23eff6ff'/><path d='M3 9h18'/><circle cx='6.5' cy='6.5' r='0.7' fill='%233b82f6'/><circle cx='9' cy='6.5' r='0.7' fill='%233b82f6'/></svg>") !important;
+}
+
+img[src$="/x-office-document.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23eff6ff'/><path d='M14 3v5h5'/><path d='M8 13h8M8 17h6'/></svg>") !important;
+}
+
+img[src$="/folder.png"],
+img[src$="/inode-directory.png"],
+img[src$="/folder-documents.png"],
+img[src$="/folder-download.png"],
+img[src$="/folder-pictures.png"],
+img[src$="/folder-music.png"],
+img[src$="/folder-videos.png"],
+img[src$="/folder-publicshare.png"],
+img[src$="/folder-remote.png"],
+img[src$="/user-home.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' fill='%23dbeafe'/><path stroke='%2393c5fd' d='M3 11h18'/></svg>") !important;
+}
+
+
+/* === Bundled fallback PNG overrides (the "purple diamond" hash-named assets) === */
+
+/* The Menu panel button (tray): make it a grid/dashboard icon */
+.osjs-panel-item img[src$="881c86876af63b732063d7bdd51bb226.png"],
+.osjs-panel-item img[src$="f4cfc6708cf6bfc17d4b1e775f594ae2.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%231b2236' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='7' height='7' rx='1.5'/><rect x='14' y='3' width='7' height='7' rx='1.5'/><rect x='3' y='14' width='7' height='7' rx='1.5'/><rect x='14' y='14' width='7' height='7' rx='1.5'/></svg>") !important;
+}
+
+/* Menu entries using the hashed PNG get a subtle chevron/list marker */
+.osjs-gui-menu-entry [style*="881c86876af63b732063d7bdd51bb226"],
+.osjs-gui-menu-entry [style*="f4cfc6708cf6bfc17d4b1e775f594ae2"]{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='1.5' fill='%235d6b88'/></svg>") !important;
+}
+
+/* Any OTHER uses of these hashed PNGs (future-proof): generic clean file icon */
+[style*="881c86876af63b732063d7bdd51bb226"],
+[style*="f4cfc6708cf6bfc17d4b1e775f594ae2"]{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f8fafc'/><path d='M14 3v5h5'/></svg>") !important;
+}
+
+img[src$="881c86876af63b732063d7bdd51bb226.png"],
+img[src$="f4cfc6708cf6bfc17d4b1e775f594ae2.png"]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z' fill='%23f8fafc'/><path d='M14 3v5h5'/></svg>") !important;
+}
+
+
+/* === Don't treat the body/root fallback wallpaper as an icon === */
+.osjs-root[style*="f4cfc6708cf6bfc17d4b1e775f594ae2"],
+.osjs-root[style*="881c86876af63b732063d7bdd51bb226"]{
+  background-image:
+    radial-gradient(1200px 600px at 15% 10%, rgba(147,197,253,0.55), transparent 60%),
+    radial-gradient(900px 500px at 85% 90%, rgba(196,181,253,0.45), transparent 60%),
+    linear-gradient(180deg, #eef2fb 0%, #e6ecf7 100%) !important;
+  background-color:#eef2fb !important;
+}
+
+
+/* === Tagged menu entries get semantic icons (via theme.js MutationObserver) === */
+
+.osjs-gui-menu-entry[data-label-action=logout] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/><path d='M16 17l5-5-5-5'/><path d='M21 12H9'/></svg>") !important;
+}
+
+.osjs-gui-menu-entry[data-label-action=save-logout] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z' fill='%23dbeafe'/><polyline points='17 21 17 13 7 13 7 21'/><polyline points='7 3 7 8 15 8'/></svg>") !important;
+}
+
+.osjs-gui-menu-entry[data-label-action=about] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9' fill='%23eff6ff'/><path d='M12 16v-4M12 8h.01' stroke-linecap='round'/></svg>") !important;
+}
+
+.osjs-gui-menu-entry[data-label-action=settings] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important;
+}
+
+.osjs-gui-menu-entry[data-label-action=quit] .osjs-icon,
+.osjs-gui-menu-entry[data-label-action=close] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9' fill='%23fef2f2'/><path d='M15 9l-6 6M9 9l6 6'/></svg>") !important;
+}
+
+.osjs-gui-menu-entry[data-label-action=open] .osjs-icon,
+.osjs-gui-menu-entry[data-label-action=run] .osjs-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><polygon points='10 8 16 12 10 16 10 8' fill='%233b82f6'/><circle cx='12' cy='12' r='9'/></svg>") !important;
+}
+
+
+/* === Per-app icon overrides via window-title tagging + img alt === */
+
+/* Settings — cog */
+.osjs-window-header[data-app-title=settings] .osjs-window-icon > div,
+.osjs-panel-item--icon img[alt=Settings][src*="881c"],
+.osjs-panel-item--icon img[alt=Settings][src*="f4cfc"]{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3' fill='%23f1f5f9'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important;
+}
+
+/* Settings via taskbar img — replace via content (img element) */
+.osjs-panel-item--icon img[alt=Settings]{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%235d6b88' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3' fill='%23f1f5f9'/><path d='M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z'/></svg>") !important;
+}
+

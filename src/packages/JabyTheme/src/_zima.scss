@@ -1,0 +1,144 @@
+// JabyOS polish layer — applied last, on top of core styles.
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+.osjs-root {
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(147, 197, 253, 0.55), transparent 60%),
+    radial-gradient(900px 500px at 85% 90%, rgba(196, 181, 253, 0.45), transparent 60%),
+    linear-gradient(180deg, #eef2fb 0%, #e6ecf7 100%);
+  font-family: $font-family;
+  color: $font-color;
+  font-weight: 450;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Desktop background fallback (image via Settings will overlay this)
+.osjs-desktop {
+  background: transparent;
+}
+
+// Panel — floating dock feel at bottom
+.osjs-panel {
+  border-radius: $z-radius;
+  margin: $base-margin;
+  padding: 0 ($base-margin * 0.75);
+  min-height: 44px;
+
+  &[data-position=top] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+  }
+
+  &[data-position=bottom] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+}
+
+.osjs-panel-item {
+  padding: 0 ($base-margin * 0.5);
+  border-radius: $z-radius-sm;
+  transition: background-color $transition-duration $transition-timing-function;
+
+  &--clickable:hover {
+    background-color: $z-accent-soft !important;
+    color: $z-accent-hover !important;
+    box-shadow: none !important;
+  }
+}
+
+// Window header
+.osjs-window-header {
+  padding: ($base-margin * 0.75) $base-margin !important;
+  background: transparent;
+  border-bottom: 1px solid $z-border;
+}
+
+.osjs-window-title {
+  font-weight: 600;
+  font-size: 0.92em;
+  color: $z-text;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.osjs-window-icon {
+  margin-right: $base-margin * 0.75;
+}
+
+// Make traffic-light buttons a touch bigger and softer
+.osjs-window-button {
+  & > div {
+    &::before {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// Soft inputs
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea,
+select {
+  border-radius: $z-radius-sm;
+  padding: 0.4em 0.6em;
+}
+
+// Iconview on desktop — card feel for entries
+.osjs-desktop-iconview__entry {
+  border-radius: $z-radius-sm;
+  padding: 4px;
+
+  &--selected {
+    background: $z-accent-soft;
+  }
+}
+
+// Context menu
+.osjs-contextmenu,
+.osjs-menu {
+  @include glass($z-surface);
+  border: 1px solid $z-border;
+  border-radius: $z-radius;
+  box-shadow: $z-shadow;
+  padding: 4px;
+
+  li {
+    border-radius: $z-radius-sm;
+
+    &:hover {
+      background: $z-accent-soft;
+      color: $z-accent-hover;
+    }
+  }
+}
+
+// Dialogs
+.osjs-dialog {
+  border-radius: $z-radius !important;
+}
+
+// Menu separators: not hoverable, no bg change (keep original appearance)
+.osjs-gui-menu-entry:has(.osjs-gui-menu-separator) {
+  cursor: default;
+  pointer-events: none;
+
+  &:hover {
+    background: transparent !important;
+    color: inherit !important;
+  }
+}

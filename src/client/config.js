@@ -40,5 +40,12 @@ export default {
       username: 'demo',
       password: 'demo'
     }
+  },
+  desktop: {
+    settings: {
+      theme: 'JabyTheme',
+      icons: 'JabyIcons',
+      sounds: null
+    }
   }
 };

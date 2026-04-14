@@ -1,0 +1,77 @@
+// Zima-inspired palette
+$z-bg: #f4f6fa;
+$z-surface: rgba(255, 255, 255, 0.78);
+$z-surface-solid: #ffffff;
+$z-surface-hover: rgba(255, 255, 255, 0.92);
+$z-border: rgba(20, 27, 45, 0.08);
+$z-border-strong: rgba(20, 27, 45, 0.14);
+$z-text: #1b2236;
+$z-text-muted: #5d6b88;
+$z-accent: #3b82f6;
+$z-accent-hover: #2563eb;
+$z-accent-soft: rgba(59, 130, 246, 0.12);
+$z-danger: #ef4444;
+$z-success: #22c55e;
+$z-warning: #f59e0b;
+
+$z-radius-sm: 6px;
+$z-radius: 12px;
+$z-radius-lg: 18px;
+$z-shadow-sm: 0 1px 2px rgba(20, 27, 45, 0.06), 0 1px 1px rgba(20, 27, 45, 0.04);
+$z-shadow: 0 10px 30px rgba(20, 27, 45, 0.12), 0 2px 6px rgba(20, 27, 45, 0.06);
+$z-shadow-lg: 0 24px 60px rgba(20, 27, 45, 0.18), 0 6px 12px rgba(20, 27, 45, 0.08);
+$z-blur: saturate(160%) blur(22px);
+
+// OS.js theme variable bridge
+$base-margin: 0.75em;
+
+$font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', 'Manrope', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+$font-color: $z-text;
+
+$transition-duration: 0.18s;
+$transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
+$window-border: 1px solid $z-border;
+$window-background: $z-surface;
+
+$panel-background: rgba(255, 255, 255, 0.65);
+$panel-foreground: $z-text;
+
+$main-border-color: $z-border;
+
+$input-background: $z-surface-solid;
+$input-border: 1px solid $z-border-strong;
+$input-foreground: $z-text;
+
+$button-background-fallback: $z-surface-solid;
+$button-background-active: linear-gradient(180deg, #f7faff 0%, #eef3fb 100%);
+$button-background: linear-gradient(180deg, #ffffff 0%, #f2f5fb 100%);
+$button-border-active: 1px solid $z-accent;
+$button-border: 1px solid $z-border-strong;
+$button-foreground: $z-text;
+
+$range-slider-height: 2em;
+$range-slider-button-height: 1em;
+$range-slider-button-width: 1em;
+$range-slider-button-border-radius: 999px;
+$range-slider-track-height: 0.35em;
+$range-slider-track-width: 100%;
+$range-slider-track-border-radius: 999px;
+
+$view-background: $z-surface-solid;
+$view-border: 1px solid $z-border;
+
+$active-background: $z-accent-soft;
+$active-foreground: $z-accent-hover;
+
+$progress-background: $z-accent-soft;
+$progress-foreground: $z-accent;
+
+$outline: 1px solid rgba($z-accent, 0.35);
+$zebra-background: rgba(20, 27, 45, 0.02);
+
+$scrollbar-button-border: $button-border;
+$scrollbar-button-background: $button-background;
+$scrollbar-button-foreground: $input-foreground;
+$scrollbar-track-border: 1px solid transparent;
+$scrollbar-track-background: transparent;

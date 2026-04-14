@@ -11,6 +11,150 @@
     <meta name="description" content="OS.js - JavaScript Cloud/Web Desktop Platform" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; }
+      body, body.osjs-root {
+        background:
+          radial-gradient(1200px 600px at 15% 10%, rgba(147,197,253,0.55), transparent 60%),
+          radial-gradient(900px 500px at 85% 90%, rgba(196,181,253,0.45), transparent 60%),
+          linear-gradient(180deg, #eef2fb 0%, #e6ecf7 100%) !important;
+        background-color: #eef2fb !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', 'Manrope', 'Segoe UI Variable', system-ui, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        color: #1b2236;
+      }
+      body.osjs-root .osjs-boot-splash,
+      .osjs-boot-splash {
+        position: fixed !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        transform: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 18px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #1b2236 !important;
+        background:
+          radial-gradient(1200px 600px at 15% 10%, rgba(147,197,253,0.55), transparent 60%),
+          radial-gradient(900px 500px at 85% 90%, rgba(196,181,253,0.45), transparent 60%),
+          linear-gradient(180deg, #eef2fb 0%, #e6ecf7 100%) !important;
+        background-color: #eef2fb !important;
+        backdrop-filter: saturate(160%) blur(22px);
+        -webkit-backdrop-filter: saturate(160%) blur(22px);
+        z-index: 9999999999 !important;
+        font-size: 0 !important; /* hides raw "Loading..." text node */
+      }
+      .osjs-boot-splash::before {
+        content: "";
+        display: block !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 18px !important;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+        box-shadow: 0 16px 40px rgba(59,130,246,0.35), 0 4px 10px rgba(20,27,45,0.08);
+      }
+      .osjs-boot-splash::after {
+        content: "JabyOS" !important;
+        display: block !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.01em !important;
+        color: #1b2236 !important;
+      }
+      @keyframes jabyos-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 16px 40px rgba(59,130,246,0.35), 0 4px 10px rgba(20,27,45,0.08); }
+        50% { transform: scale(1.06); box-shadow: 0 22px 48px rgba(59,130,246,0.45), 0 6px 14px rgba(20,27,45,0.1); }
+      }
+      .osjs-boot-splash::before {
+        animation: jabyos-pulse 1.6s ease-in-out infinite;
+      }
+    </style>
+    <script>
+      // Hold the OS.js boot splash for at least 3 seconds + play chime on splash appear
+      (function(){
+        var MIN_MS = 3000;
+        var CHIME_COOLDOWN_MS = 6000;
+        var splash = null;
+        var seenAt = null;
+        var done = false;
+        var suppressAdd = false;
+        var lastChimeAt = 0;
+        function check(node){
+          return node && node.nodeType === 1 && node.classList && node.classList.contains('osjs-boot-splash');
+        }
+        function chime(){
+          var now = Date.now();
+          if (now - lastChimeAt < CHIME_COOLDOWN_MS) return;
+          lastChimeAt = now;
+          try {
+            var AC = window.AudioContext || window.webkitAudioContext;
+            if (!AC) return;
+            var ctx = new AC();
+            // iOS/Safari: resume context (needs prior user gesture — login click counts)
+            if (ctx.state === 'suspended' && ctx.resume) ctx.resume();
+            var now = ctx.currentTime;
+            var voices = [
+              {f: 523.25, start: 0.00, vel: 0.18, len: 2.4},
+              {f: 659.25, start: 0.12, vel: 0.16, len: 2.3},
+              {f: 783.99, start: 0.24, vel: 0.15, len: 2.2},
+              {f: 1046.5, start: 0.36, vel: 0.13, len: 2.1}
+            ];
+            var master = ctx.createGain();
+            master.gain.value = 0.7;
+            master.connect(ctx.destination);
+            voices.forEach(function(v){
+              var osc = ctx.createOscillator();
+              var gain = ctx.createGain();
+              osc.type = 'sine';
+              osc.frequency.value = v.f;
+              var t0 = now + v.start;
+              gain.gain.setValueAtTime(0, t0);
+              gain.gain.linearRampToValueAtTime(v.vel, t0 + 0.08);
+              gain.gain.exponentialRampToValueAtTime(0.0001, t0 + v.len);
+              osc.connect(gain).connect(master);
+              osc.start(t0);
+              osc.stop(t0 + v.len + 0.05);
+            });
+          } catch (e) {}
+        }
+        var observer = new MutationObserver(function(mutations){
+          mutations.forEach(function(m){
+            m.addedNodes.forEach(function(node){
+              if (check(node) && !suppressAdd) {
+                splash = node;
+                seenAt = Date.now();
+                done = false;
+                chime();
+              }
+            });
+            m.removedNodes.forEach(function(node){
+              if (node === splash && seenAt && !done) {
+                var elapsed = Date.now() - seenAt;
+                if (elapsed < MIN_MS) {
+                  suppressAdd = true;
+                  document.body.appendChild(node);
+                  suppressAdd = false;
+                  setTimeout(function(){
+                    done = true;
+                    if (node.parentNode) node.parentNode.removeChild(node);
+                  }, MIN_MS - elapsed);
+                }
+              }
+            });
+          });
+        });
+        document.addEventListener('DOMContentLoaded', function(){
+          observer.observe(document.body, {childList: true});
+        });
+      })();
+    </script>
   </head>
   <body>
   </body>

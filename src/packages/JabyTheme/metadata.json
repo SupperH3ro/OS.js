@@ -1,0 +1,16 @@
+{
+  "type": "theme",
+  "name": "JabyTheme",
+  "title": {
+    "en_EN": "JabyOS Theme",
+    "hu_HU": "JabyOS Téma"
+  },
+  "description": {
+    "en_EN": "Default JabyOS desktop theme",
+    "hu_HU": "Alapértelmezett JabyOS asztal téma"
+  },
+  "files": [
+    "main.js",
+    "main.css"
+  ]
+}

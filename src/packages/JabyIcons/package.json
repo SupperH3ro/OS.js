@@ -1,0 +1,12 @@
+{
+  "name": "@jabyos/icons",
+  "version": "0.1.0",
+  "description": "JabyOS default icon pack",
+  "files": [
+    "dist/",
+    "metadata.json"
+  ],
+  "osjs": {
+    "type": "package"
+  }
+}
