@@ -35,12 +35,6 @@
 //
 
 export default {
-  auth: {
-    login: {
-      username: 'demo',
-      password: 'demo'
-    }
-  },
   desktop: {
     settings: {
       theme: 'JabyTheme',
