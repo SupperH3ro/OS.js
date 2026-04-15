@@ -19,8 +19,8 @@ RUN cd src/packages/JabyTheme && npm run build \
     && npm run package:discover \
     && npm run build
 
-RUN mkdir -p vfs/demo/.desktop \
-    && printf '{"shortcuts":[]}\n' > vfs/demo/.desktop/.shortcuts.json
+RUN mkdir -p vfs/jaby/.desktop \
+    && printf '{"shortcuts":[]}\n' > vfs/jaby/.desktop/.shortcuts.json
 
 
 FROM node:20-slim AS runtime

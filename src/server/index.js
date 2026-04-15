@@ -50,10 +50,27 @@ const {
 const config = require('./config.js');
 const osjs = new Core(config, {});
 
+const CREDS = {
+  username: process.env.JABYOS_USERNAME || 'jaby',
+  password: process.env.JABYOS_PASSWORD || 'Krumpli6969'
+};
+
+const jabyAuthAdapter = () => ({
+  login: async (req) => {
+    const {username, password} = req.body || {};
+    if (username === CREDS.username && password === CREDS.password) {
+      return {id: 1, username: CREDS.username, name: 'Jaby', groups: ['admin']};
+    }
+    return false;
+  },
+  logout: async () => true,
+  register: async () => ({error: 'Registration disabled'})
+});
+
 osjs.register(CoreServiceProvider, {before: true});
 osjs.register(PackageServiceProvider);
 osjs.register(VFSServiceProvider);
-osjs.register(AuthServiceProvider);
+osjs.register(AuthServiceProvider, {args: {adapter: jabyAuthAdapter}});
 osjs.register(SettingsServiceProvider);
 
 const shutdown = signal => (error) => {
